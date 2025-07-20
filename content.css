@@ -42,3 +42,18 @@
   all: unset;
   display: block;
 }
+
+/* 确保SVG图标能正常显示 */
+.ollama-translation-popup svg {
+  display: inline-block !important;
+  width: auto !important;
+  height: auto !important;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+.ollama-translation-popup button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}

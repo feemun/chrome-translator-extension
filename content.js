@@ -282,11 +282,11 @@ class TranslationManager {
         </div>
       </div>
       <div style="display: flex; gap: 8px;">
-        <button id="pin-translation" style="background: none; border: none; padding: 6px; cursor: pointer; border-radius: 50%; color: #ff6b9d; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;" title="固定弹窗" onmouseover="this.style.backgroundColor='rgba(255, 107, 157, 0.2);'" onmouseout="this.style.backgroundColor='none';">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16,12V4H17V2H7V4H8V12L6,14V16H11.2V22H12.8V16H18V14L16,12Z"/></svg>
+        <button id="pin-translation" style="background: none; border: none; padding: 6px; cursor: pointer; border-radius: 50%; color: #ff6b9d; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;" title="固定弹窗" onmouseover="this.style.backgroundColor='rgba(255, 107, 157, 0.2)';" onmouseout="this.style.backgroundColor='none';">
+📌
         </button>
         <button id="close-translation" style="background: none; border: none; padding: 6px; cursor: pointer; border-radius: 50%; color: #999; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;" title="关闭弹窗" onmouseover="this.style.backgroundColor='#ff5f56'; this.style.color='white';" onmouseout="this.style.backgroundColor='none'; this.style.color='#999';">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
     </div>
@@ -295,10 +295,10 @@ class TranslationManager {
       <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid #f0f0f0;">
         <div style="display: flex; gap: 12px;">
           <button id="copy-translation" style="background: none; border: none; padding: 6px; cursor: pointer; border-radius: 50%; color: #4caf50; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;" title="复制翻译文本" onmouseover="this.style.backgroundColor='rgba(76, 175, 80, 0.2)';" onmouseout="this.style.backgroundColor='none';">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+📋
           </button>
-          <button id="speak-translation" style="background: none; border: none; padding: 6px; cursor: pointer; border-radius: 50%; color: #2196f3; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;" title="朗读翻译文本" onmouseover="this.style.backgroundColor='rgba(33, 150, 243, 0.2);'" onmouseout="this.style.backgroundColor='none';">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M3,9V15H7L12,20V4L7,9H3M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12Z"/></svg>
+          <button id="speak-translation" style="background: none; border: none; padding: 6px; cursor: pointer; border-radius: 50%; color: #2196f3; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;" title="朗读翻译文本" onmouseover="this.style.backgroundColor='rgba(33, 150, 243, 0.2)';" onmouseout="this.style.backgroundColor='none';">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
           </button>
         </div>
         <div style="display: flex; gap: 8px;">
@@ -329,7 +329,7 @@ class TranslationManager {
       pinButton.style.backgroundColor = 'rgba(255, 107, 157, 0.3)';
       pinButton.style.color = '#fff';
       pinButton.title = '取消固定弹窗';
-      pinButton.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16,12V4H17V2H7V4H8V12L6,14V16H11.2V22H12.8V16H18V14L16,12Z"/></svg>';
+      pinButton.innerHTML = '📌';
       pinButton.onmouseover = function() { this.style.backgroundColor = 'rgba(255, 107, 157, 0.4)'; };
       pinButton.onmouseout = function() { this.style.backgroundColor = 'rgba(255, 107, 157, 0.3)'; };
     } else {
@@ -337,7 +337,7 @@ class TranslationManager {
       pinButton.style.backgroundColor = 'none';
       pinButton.style.color = '#ff6b9d';
       pinButton.title = '固定弹窗';
-      pinButton.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16,12V4H17V2H7V4H8V12L6,14V16H11.2V22H12.8V16H18V14L16,12Z"/></svg>';
+      pinButton.innerHTML = '📌';
       pinButton.onmouseover = function() { this.style.backgroundColor = 'rgba(255, 107, 157, 0.2)'; };
       pinButton.onmouseout = function() { this.style.backgroundColor = 'none'; };
     }

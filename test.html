@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图标测试页面</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .icon-test {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            align-items: center;
+        }
+        .icon-button {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+        .icon-label {
+            margin-left: 10px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chrome翻译扩展图标测试</h1>
+    
+    <div class="icon-test">
+        <div class="icon-button" style="color: #ff6b9d;">
+            <!-- 固定按钮图标 -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 3L21 8L8 21L3 21L3 16L16 3Z"/>
+            </svg>
+        </div>
+        <span class="icon-label">固定按钮 (图钉)</span>
+    </div>
+    
+    <div class="icon-test">
+        <div class="icon-button" style="color: #999;">
+            <!-- 关闭按钮图标 -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </div>
+        <span class="icon-label">关闭按钮 (X)</span>
+    </div>
+    
+    <div class="icon-test">
+        <div class="icon-button" style="color: #4caf50;">
+            <!-- 复制按钮图标 -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+        </div>
+        <span class="icon-label">复制按钮 (双文档)</span>
+    </div>
+    
+    <div class="icon-test">
+        <div class="icon-button" style="color: #2196f3;">
+            <!-- 语音播放按钮图标 -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            </svg>
+        </div>
+        <span class="icon-label">语音播放按钮 (扬声器)</span>
+    </div>
+    
+    <p style="margin-top: 40px; color: #666;">
+        这个测试页面显示了Chrome翻译扩展中使用的所有图标。<br>
+        如果您能看到所有图标，说明SVG代码是正确的。
+    </p>
+</body>
+</html>
