@@ -1,0 +1,47 @@
+{
+  "name": "ollama-translator-extension",
+  "version": "1.0.0",
+  "description": "使用本地Ollama大模型进行文本翻译的Chrome浏览器插件",
+  "main": "background.js",
+  "scripts": {
+    "build": "echo 'Chrome extension ready for loading'",
+    "test": "echo 'No tests specified'",
+    "lint": "echo 'No linting configured'"
+  },
+  "keywords": [
+    "chrome-extension",
+    "translator",
+    "ollama",
+    "ai",
+    "translation",
+    "local-ai",
+    "privacy"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/chrome-translator-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/chrome-translator-extension/issues"
+  },
+  "homepage": "https://github.com/yourusername/chrome-translator-extension#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "manifest": {
+    "version": 3,
+    "permissions": [
+      "activeTab",
+      "storage",
+      "contextMenus"
+    ],
+    "host_permissions": [
+      "http://localhost:*/*",
+      "http://127.0.0.1:*/*"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="8" fill="#4285f4"/>
+  <circle cx="15" cy="24" r="6" fill="white"/>
+  <circle cx="33" cy="24" r="6" fill="white"/>
+  <path d="M15 18 L33 18 M15 30 L33 30" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <text x="24" y="38" text-anchor="middle" fill="white" font-size="12" font-family="Arial, sans-serif" font-weight="bold">翻译</text>
+  <path d="M12 12 Q24 6 36 12" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,44 @@
+.ollama-translate-button {
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.ollama-translate-button:hover {
+  background: #3367d6 !important;
+  transform: translateY(-1px);
+}
+
+.ollama-translation-popup {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ollama-translation-popup button:hover {
+  background: #e8eaed !important;
+}
+
+/* 确保翻译元素不会被网页样式影响 */
+.ollama-translate-button,
+.ollama-translation-popup {
+  all: initial;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.ollama-translate-button * {
+  all: unset;
+}
+
+.ollama-translation-popup * {
+  all: unset;
+  display: block;
+}
