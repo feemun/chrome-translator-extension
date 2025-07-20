@@ -335,9 +335,17 @@ class TranslationManager {
     translateResultEl.textContent = '翻译中，请稍候...';
     
     try {
-      const response = await chrome.runtime.sendMessage({
-        action: 'translate',
-        text: text
+      const response = await new Promise((resolve, reject) => {
+        chrome.runtime.sendMessage({
+          action: 'translate',
+          text: text
+        }, (response) => {
+          if (chrome.runtime.lastError) {
+            reject(new Error('连接错误: ' + chrome.runtime.lastError.message));
+            return;
+          }
+          resolve(response);
+        });
       });
       
       if (response && response.success) {
@@ -359,8 +367,16 @@ class TranslationManager {
     try {
       const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
       
-      const response = await chrome.tabs.sendMessage(tab.id, {
-        action: 'getSelectedText'
+      const response = await new Promise((resolve, reject) => {
+        chrome.tabs.sendMessage(tab.id, {
+          action: 'getSelectedText'
+        }, (response) => {
+          if (chrome.runtime.lastError) {
+            reject(new Error('连接错误: ' + chrome.runtime.lastError.message));
+            return;
+          }
+          resolve(response);
+        });
       });
       
       if (response && response.text) {

@@ -29,7 +29,7 @@ class MessageHandler {
   static setupListeners() {
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       if (request.action === 'translate') {
-        this.handleTranslateRequest(request.text, sendResponse);
+        MessageHandler.handleTranslateRequest(request.text, sendResponse);
         return true; // 保持消息通道开放
       }
     });

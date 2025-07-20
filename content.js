@@ -85,6 +85,12 @@ class TranslationManager {
       action: 'translate',
       text: this.selectedText
     }, (response) => {
+      if (chrome.runtime.lastError) {
+        console.error('Chrome runtime error:', chrome.runtime.lastError);
+        this.updateTranslationPopup('连接错误: ' + chrome.runtime.lastError.message);
+        return;
+      }
+      
       if (response && response.success) {
         this.updateTranslationPopup(response.translation);
       } else {
@@ -412,6 +418,12 @@ class TranslationManager {
       action: 'translate',
       text: text
     }, (response) => {
+      if (chrome.runtime.lastError) {
+        console.error('Chrome runtime error:', chrome.runtime.lastError);
+        this.updateTranslationPopup('连接错误: ' + chrome.runtime.lastError.message);
+        return;
+      }
+      
       if (response && response.success) {
         this.updateTranslationPopup(response.translation);
       } else {
