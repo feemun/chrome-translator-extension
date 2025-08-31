@@ -147,7 +147,16 @@ class TranslationManager {
   updateTranslationPopup(translation) {
     const resultElement = document.getElementById('translation-result');
     if (resultElement) {
-      resultElement.textContent = translation;
+      // 转义HTML特殊字符，然后将换行符转换为<br>标签
+      const escapedTranslation = translation
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/\n/g, '<br>');
+      
+      resultElement.innerHTML = escapedTranslation;
     }
   }
 

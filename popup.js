@@ -58,7 +58,7 @@ class ConfigManager {
     ollamaUrl: 'http://localhost:11434',
     model: 'qwen2.5:latest',
     targetLanguage: 'zh-CN',
-    prompt: '请将以下文本翻译成中文，只返回翻译结果，不要添加任何解释：'
+    prompt: '请将以下文本翻译成中文，保持原文的格式和换行符，只返回翻译结果，不要添加任何解释：'
   };
 
   static async load() {
@@ -349,7 +349,16 @@ class TranslationManager {
       });
       
       if (response && response.success) {
-        translateResultEl.textContent = response.translation;
+        // 转义HTML特殊字符，然后将换行符转换为<br>标签
+        const escapedTranslation = response.translation
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;')
+          .replace(/\n/g, '<br>');
+        
+        translateResultEl.innerHTML = escapedTranslation;
         showStatus('翻译完成', 'success');
       } else {
         throw new Error(response?.error || '翻译失败');
@@ -436,7 +445,16 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (!translateResultEl) return;
     
     if (request.success) {
-      translateResultEl.textContent = request.translation;
+      // 转义HTML特殊字符，然后将换行符转换为<br>标签
+      const escapedTranslation = request.translation
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/\n/g, '<br>');
+      
+      translateResultEl.innerHTML = escapedTranslation;
       showStatus('翻译完成', 'success');
     } else {
       translateResultEl.textContent = '翻译失败: ' + request.error;

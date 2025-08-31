@@ -57,3 +57,9 @@
   align-items: center !important;
   justify-content: center !important;
 }
+
+/* 确保翻译结果能正确显示换行符 */
+#translation-result {
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+}

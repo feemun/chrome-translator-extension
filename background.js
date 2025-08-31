@@ -4,7 +4,7 @@ class BackgroundConfigManager {
     ollamaUrl: 'http://localhost:11434',
     model: 'qwen2.5:latest',
     targetLanguage: 'zh-CN',
-    prompt: '请将以下文本翻译成中文，只返回翻译结果，不要添加任何解释：'
+    prompt: '请将以下文本翻译成中文，保持原文的格式和换行符，只返回翻译结果，不要添加任何解释：'
   };
 
   static async getConfig() {
